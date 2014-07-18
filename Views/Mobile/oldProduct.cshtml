@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "oldProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    
+    @for (int i = 0; i < @ViewBag.t;i=i+4)
+    {
+       <tr>
+        <td>
+              <div class="span2" >
+              <div class="well" style="background:silver">
+              <a href=/Product/1><img  class="img-polaroid" src="@Model[i+0].Path" alt="NotFound" style="height: 140px ;width: 100px"></a>
+              <h4>@Model[i+0].CompanyName @Model[i+0].Model</h4>
+              <p>@Model[i+0].Price $</p>
+               </div>
+              </div>
+        </td>
+       <td>
+              <div class="span2" >
+              <div class="well" style="background:silver">
+              <a href=/Product/1><img  class="img-polaroid" src="@Model[i+1].Path" alt="NotFound" style="height: 140px ;width: 100px"></a>
+              <h4>@Model[i+1].CompanyName @Model[i+1].Model</h4>
+              <p>@Model[i+1].Price $</p>
+               </div>
+              </div>
+       </td>
+             <td>
+              <div class="span2" >
+              <div class="well" style="background:silver">
+              <a href=/Product/1><img  class="img-polaroid" src="@Model[i+2].Path" alt="NotFound" style="height: 140px ;width: 100px"></a>
+              <h4>@Model[i+2].CompanyName @Model[i+2].Model</h4>
+              <p>@Model[i+2].Price $</p>
+               </div>
+              </div>
+       </td>
+             <td>
+              <div class="span2" >
+              <div class="well" style="background:silver">
+              <a href=/Product/1><img  class="img-polaroid" src="@Model[i+3].Path" alt="NotFound" style="height: 140px ;width: 100px"></a>
+              <h4>@Model[i+3].CompanyName @Model[i+3].Model</h4>
+              <p>@Model[i+3].Price $</p>
+               </div>
+              </div>
+       </td>
+
+      </tr>   
+    }
+</table>
+
+

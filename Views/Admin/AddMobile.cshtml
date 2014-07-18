@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "AddMobile";
+    Layout="~/Views/Shared/Layout2.cshtml";
+}
+@model EAD_Project.Models.Mobile
+@using (Html.BeginForm("save", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.CompanyName)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CompanyName)
+            </td>
+        </tr>
+        <tr>
+           <td>
+                <br />
+           </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Camera)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Camera)
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <br />
+             </td>
+        </tr>
+        <tr>
+             <td>
+                @Html.LabelFor(m => m.Browser)
+             </td>
+             <td>
+                @Html.TextBoxFor(m => m.Browser)
+             </td>
+        </tr>
+        <tr>
+             <td>
+                 <br />
+             </td>
+        </tr>
+        <tr>
+            <td>
+                  @Html.LabelFor(m => m.Colour)
+            </td>
+            <td>
+                  @Html.TextBoxFor(m => m.Colour)
+            </td>
+       </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+                  @Html.LabelFor(m => m.Memory)
+            </td>
+            <td>
+                  @Html.TextBoxFor(m => m.Memory)
+            </td>
+       </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+     <tr>
+            <td>
+                @Html.LabelFor(m => m.OS)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.OS)
+            </td>
+     </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+     <tr>
+         <td>
+            @Html.LabelFor(m => m.Price)
+         </td>
+        <td>
+            @Html.TextBoxFor(m => m.Price)
+        </td>
+    </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Processor)
+                </td>
+            <td>
+                @Html.TextBoxFor(m => m.Processor)
+                </td>
+    </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+               @Html.LabelFor(m => m.RingTone)
+                </td>
+            <td>
+              @Html.TextBoxFor(m => m.RingTone)
+                </td>
+         </tr>
+         <tr>
+            <td>
+                <br />
+            </td>
+         </tr>
+           <tr>
+            <td>
+               @Html.LabelFor(m => m.Model)
+                </td>
+            <td>
+              @Html.TextBoxFor(m => m.Model)
+                </td>
+         </tr>
+         <tr>
+            <td>
+                <br />
+            </td>
+         </tr>
+     
+        <tr>
+        <td>
+             <b>Upload picture</b>
+        </td>
+        <td>
+             <input type="file" name="file"/>
+        </td>
+        </tr>
+    </table>  
+    <input type="submit" name="Submit" id="Submit" value="Save" />
+}

@@ -1,0 +1,170 @@
+﻿ @{
+    ViewBag.Title = "uploadMobile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model EAD_Project.Models.Mobile
+@using (Html.BeginForm("save", "Mobile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.CompanyName)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.CompanyName)
+                @Html.ValidationMessageFor(m=>m.CompanyName)
+            </td>
+        </tr>
+        <tr>
+           <td>
+                <br />
+           </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Camera)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Camera)
+                @Html.ValidationMessageFor(m=>m.Camera)
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <br />
+             </td>
+        </tr>
+        <tr>
+             <td>
+                @Html.LabelFor(m => m.Browser)
+             
+
+             </td>
+             <td>
+                @Html.TextBoxFor(m => m.Browser)
+                @Html.ValidationMessageFor(m=>m.Browser)
+             </td>
+        </tr>
+        <tr>
+             <td>
+                 <br />
+             </td>
+        </tr>
+        <tr>
+            <td>
+                  @Html.LabelFor(m => m.Colour)
+            </td>
+            <td>
+                  @Html.TextBoxFor(m => m.Colour)
+                   @Html.ValidationMessageFor(m=>m.Colour)
+            </td>
+       </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+                  @Html.LabelFor(m => m.Memory)
+            </td>
+            <td>
+                  @Html.TextBoxFor(m => m.Memory)
+                   @Html.ValidationMessageFor(m=>m.Memory)
+            </td>
+       </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+     <tr>
+            <td>
+                @Html.LabelFor(m => m.OS)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.OS)
+                   @Html.ValidationMessageFor(m=>m.OS)
+            </td>
+     </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+     <tr>
+         <td>
+            @Html.LabelFor(m => m.Price)
+         </td>
+        <td>
+            @Html.TextBoxFor(m => m.Price)
+               @Html.ValidationMessageFor(m=>m.Price)
+        </td>
+    </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Processor)
+                
+                </td>
+            <td>
+                @Html.TextBoxFor(m => m.Processor)
+                @Html.ValidationMessageFor(m=>m.Processor)
+                </td>
+    </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+               @Html.LabelFor(m => m.RingTone)
+                </td>
+            <td>
+              @Html.TextBoxFor(m => m.RingTone)
+                   @Html.ValidationMessageFor(m=>m.RingTone)
+                </td>
+         </tr>
+         <tr>
+            <td>
+                <br />
+            </td>
+         </tr>
+           <tr>
+            <td>
+               @Html.LabelFor(m => m.Model)
+                </td>
+            <td>
+              @Html.TextBoxFor(m => m.Model)
+               @Html.ValidationMessageFor(m=>m.Model)
+                </td>
+         </tr>
+         <tr>
+            <td>
+                <br />
+            </td>
+         </tr>
+     
+        <tr>
+        <td>
+             <b>Upload picture</b>
+        </td>
+        <td>
+             <input type="file" name="file"/>
+        </td>
+        </tr>
+    </table>  
+    <input type="submit" name="Submit" id="Submit" value="Save" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

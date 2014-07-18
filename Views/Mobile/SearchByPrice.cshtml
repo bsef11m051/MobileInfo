@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "SearchByPrice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="~/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet" href="~/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="~/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="~/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="~/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="~/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+<table>
+    
+    @for (int i = 0; i < @ViewBag.t;i=i+4)
+    {
+       <tr>
+        <td>
+              <div class="span2" >
+              <div class="well" style="background:aqua;height: 300px ;width: 150px">
+              <a class="fancybox" rel="group" href="@Model[i+0].Path"><img src="@Model[i+0].Path" style="height: 140px ;width: 100px" alt="" /></a>
+              <h4>@Model[i+0].CompanyName @Model[i+0].Model</h4>
+              <p>@Model[i+0].Price Rs</p>
+                  <a href="~/Mobile/Details?u=@Model[i+0].Model">View Details</a>
+               </div>
+              </div>
+        </td>
+       <td>
+              <div class="span2" >
+              <div class="well" style="background:aqua;height: 300px ;width: 150px">
+              <a class="fancybox" rel="group" href="@Model[i+1].Path"><img src="@Model[i+1].Path" style="height: 140px ;width: 100px" alt="" /></a>
+              <h4>@Model[i+1].CompanyName @Model[i+1].Model</h4>
+              <p>@Model[i+1].Price Rs</p>
+                  <a href="~/Mobile/Details?u=@Model[i+1].Model">View Details</a>
+               </div>
+              </div>
+       </td>
+             <td>
+              <div class="span2" >
+              <div class="well" style="background:aqua;height: 300px ;width: 150px">
+              <a class="fancybox" rel="group" href="@Model[i+2].Path"><img src="@Model[i+2].Path" style="height: 140px ;width: 100px" alt="" /></a>
+              <h4>@Model[i+2].CompanyName @Model[i+2].Model</h4>
+              <p>@Model[i+2].Price Rs</p>
+                  <a href="~/Mobile/Details?u=@Model[i+2].Model">View Details</a>
+               </div>
+              </div>
+       </td>
+             <td>
+              <div class="span2" >
+              <div class="well" style="background:aqua;height: 300px ;width: 150px">
+              <a class="fancybox" rel="group" href="@Model[i+3].Path"><img src="@Model[i+3].Path" style="height: 140px ;width: 100px" alt="" /></a>
+              <h4>@Model[i+3].CompanyName @Model[i+3].Model</h4>
+              <p>@Model[i+3].Price Rs</p>
+                  <a href="~/Mobile/Details?u=@Model[i+3].Model">View Details</a>
+               </div>
+              </div>
+       </td>
+
+      </tr>   
+    }
+</table>

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model EAD_Project.Models.Login
+@using (Html.BeginForm("login", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <table>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m=>m.Name)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m=>m.Name)
+            </td>
+        </tr>
+        <tr>
+           <td>
+                <br />
+           </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Password)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Password)
+                @Html.ValidationMessageFor(m=>m.Password)
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <br />
+             </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Forgot Password","forgotPassword","Home")
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <input type="submit" style="margin-left:150px" class="btn btn-primary" />
+            </td>
+        </tr>
+            </table>  
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

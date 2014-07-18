@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "AddToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table border="1">
+    <tr>
+           <th>
+               Index
+           </th>
+           <th>
+               CompanyName
+           </th>
+           <th>
+               Model
+           </th>
+           <th>
+               Display
+           </th>
+       </tr>
+ @for (int i = 0; i < @ViewBag.t;i++)
+    {
+       <tr>
+           <td>
+               @i
+           </td>
+           <td>
+               @Model[i].CompanyName
+           </td>
+           <td>
+               @Model[i].Model
+           </td>
+           <td>
+               <img src="@Model[i].Path" style="height: 45px ;width: 30px" alt="" />
+           </td>
+       </tr>
+    }
+</table>
+<form method="post" action="~/User/index">
+    <input type="submit" value="Back" />
+</form>
+<form method="post" action="~/User/newLogin">
+    <input type="submit" value="CheckOut" />
+</form>

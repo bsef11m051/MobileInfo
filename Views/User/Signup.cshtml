@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+           $('#c3').mouseout(function () {
+            var userName = $('#c3').val();
+            $.getJSON("/User/check?u=" + userName, function (data) {
+                if (data) {
+                    $('#p1').text("Username is Unavailable");
+                    $('#p1').val("false");
+                }
+                else {
+                    $('#p1').text("Username is Available");
+                    $('#p1').val("true");
+                }
+            });
+
+        });
+    });
+    
+</script>
+<script>
+    function f() {
+        var a = $('#p1').val();
+        if ($('#c3').val() == "" || $('#c2').val() == "" || $('#c1').val() == "") {
+            $('#p2').text("Input all values");
+            return false;
+        }
+        if ($('#c1').val() != $('#c2').val()) {
+            $('#p2').text("Password don't match");
+            return false;
+        }
+        
+        else if (a == "false") {
+            $('#p1').text("Username is Unavailable");
+            return false;
+        }
+        else {
+            return true;
+        }
+        }
+</script>
+<form method="post" action="~/User/Save" onsubmit="return f()">
+<table>
+    <tr>
+        <td>
+        <br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        Enter Username:
+        </td>
+        <td>
+        <input type="text" id="c3" name="n"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+             &nbsp&nbsp&nbsp<div id="p1" style="color:red"></div>
+        <br />
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            Enter E-mail:
+        </td>
+        <td>
+        <input type="email" name="email" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <br />
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            Enter passward:
+        </td>
+        <td>
+        <input type="password" name="pwd" id="c1"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Confirm passward:
+        </td>
+        <td>
+        <input type="password" name="cpwd" id="c2"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="p2" style="color:red"></div>
+        <br />
+        </td>
+    </tr>
+</table>
+    <br />
+    <input type="submit" style="margin-left:150px" class="btn btn-primary" />
+</form>

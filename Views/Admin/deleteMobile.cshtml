@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "deleteMobile";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<form method="post" action="~/Admin/Delete">
+<table>
+    <tr>
+        <td>
+        Enter Company Name:
+        </td>
+        <td>
+            <input type="text" name="n" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+        Enter Model No:
+        </td>
+        <td>
+            <input type="text" name="m" />
+        </td>
+    </tr>
+</table>
+    <input type="submit" name="Submit" id="Submit" value="Delete" />
+</form>
+

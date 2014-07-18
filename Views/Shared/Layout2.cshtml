@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap.js"></script>
+
+     <script type="text/javascript" src="~/js/jquery-1.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //Execute the slideShow
+        slideShow();
+
+    });
+
+    function slideShow() {
+
+        //Set the opacity of all images to 0
+        $('#gallery a').css({ opacity: 0.0 });
+
+        //Get the first image and display it (set it to full opacity)
+        $('#gallery a:first').css({ opacity: 1.0 });
+
+        //Call the gallery function to run the slideshow, 6000 = change to next image after 6 seconds
+        setInterval('gallery()', 6000);
+
+    }
+
+    function gallery() {
+
+        //if no IMGs have the show class, grab the first image
+        var current = ($('#gallery a.show') ? $('#gallery a.show') : $('#gallery a:first'));
+
+        //Get next image, if it reached the end of the slideshow, rotate it back to the first image
+        var next = ((current.next().length) ? ((current.next().hasClass('caption')) ? $('#gallery a:first') : current.next()) : $('#gallery a:first'));
+
+        //Set the fade in effect for the next image, show class has higher z-index
+        next.css({ opacity: 0.0 })
+        .addClass('show')
+        .animate({ opacity: 1.0 }, 600);
+
+        //Hide the current image
+        current.animate({ opacity: 0.0 }, 600)
+        .removeClass('show');
+
+        //Set the opacity to 0 and height to 1px
+        $('#gallery .caption').animate({ opacity: 0.0 }, { queue: false, duration: 0 }).animate({ height: '1px' }, { queue: true, duration: 300 });
+    }
+
+</script>
+<style type="text/css">
+body{
+	font-family:arial
+}
+
+.clear {
+	clear:both
+}
+
+#gallery {
+	position:relative;
+	height:200px
+}
+	#gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#gallery a img {
+		border:none;
+	}
+	
+	#gallery a.show {
+		z-index:500
+	}
+
+	#gallery .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:100px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#gallery .caption .content {
+		margin:5px
+	}
+	
+	#gallery .caption .content h3 {
+		margin:0;
+		padding:0;
+		color:#1DCCEF;
+	}
+	
+
+</style>
+
+
+</head>
+<body style="background-color:lightcyan;">
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <div class="row">
+  <div class="col-md-2">
+      <p></p>
+      <p></p>
+  </div>
+  <div class="col-md-8">
+        <div class="list-group">
+        <nav class="navbar navbar-inverse" role="navigation">
+       
+            <div class="navbar-header">
+
+            <a class="navbar-brand" href="~/Admin/AddMobile">Add Mobile</a>
+            <a class="navbar-brand" href="~/Admin/deleteMobile">Delete Mobile</a>
+            <a class="navbar-brand" href="~/Admin/up">Update Mobile</a>
+            </div>          
+
+            <ul class="nav navbar-nav pull-right">   
+                <li><a href="~/Admin/Index1" >Logout |</a></li>             
+            </ul>
+        </nav>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+      <p></p>
+      <p></p>
+  </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-6">
+            <div id="gallery">
+
+	<a href="#" class="show">
+		<img src="~/Images/images0.jpg"  width="560" height="200" title="" alt="" />
+	</a>
+	
+	<a href="#">
+		<img src="~/Images/images1.jpg"  width="560" height="200" title="" alt="" />
+	</a>
+	
+	<a href="#">
+		<img src="~/Images/images2.jpg"  width="560" height="200" title="" alt="" />
+	</a>
+
+	<a href="#">
+		<img src="~/Images/images3.jpg"  width="560" height="200" title="" alt="" />
+	</a>
+	
+	<a href="#">
+		<img src="~/Images/images4.jpg"  width="560" height="200" title="" alt="" />
+	</a>
+	
+</div>
+        @RenderBody()
+      </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+      <p></p>
+      <p></p>
+    </div>
+    <div class="col-md-8">
+        <hr />       
+    @*    <div id="footer">
+		    <a href="~/Home/Index">Home</a>  |  <a href="~/Mobile/newProduct">New Products</a>  |  <a href="~/Mobile/oldProduct">Old Products</a>  |  <a href="~/Home/contactUs">Contact Us</a>  |  <a href="index2.html" class="terms">Privacy Policy</a>  |  <a href="index2.html" class="terms">Terms of Use</a>
+		    <p>Copyright &copy;. All rights reserved. Design by Zohaib.</p>																																																																																																																																								
+	    </div>
+    *@ </div>
+</div>
+</body>
+</html>
+

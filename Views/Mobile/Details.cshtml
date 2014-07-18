@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form method="post" action="~/User/AddToCart?u=@Model.CompanyName,@Model.Model,@Model.Path">
+  <table>
+        <tr>
+            <td>
+                <img src="@Model.Path" style="height: 340px ;width: 200px" alt="" />
+            </td>
+            <td>
+                <input type="submit" value="add to cart" />
+            </td>
+        </tr>
+        <tr>
+           <td>
+                <br />
+           </td>
+        </tr>
+        <tr>
+            <td>
+                 CompanyName
+            </td>
+            <td>
+                 @Model.CompanyName
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <br />
+             </td>
+        </tr>
+       <tr>
+            <td>
+                 Camera
+            </td>
+            <td>
+                 @Model.Camera MP
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <br />
+             </td>
+        </tr>
+       
+        <tr>
+             <td>
+                 Browser
+             </td>
+             <td>
+                @Model.Browser
+             </td>
+        </tr>
+        <tr>
+             <td>
+                 <br />
+             </td>
+        </tr>
+        <tr>
+            <td>
+                  Colour
+            </td>
+            <td>
+                  @Model.Colour
+            </td>
+       </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+                  Memory
+            </td>
+            <td>
+                  @Model.Memory
+            </td>
+       </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+     <tr>
+            <td>
+                OS
+            </td>
+            <td>
+                @Model.OS
+            </td>
+     </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+     <tr>
+         <td>
+            Price
+         </td>
+        <td>
+            @Model.Price
+        </td>
+    </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+               Processor
+                </td>
+            <td>
+                @Model.Processor
+                </td>
+    </tr>
+    <tr>
+         <td>
+            <br />
+         </td>
+     </tr>
+        <tr>
+            <td>
+              RingTone
+                </td>
+            <td>
+              @Model.RingTone
+                </td>
+         </tr>
+         <tr>
+            <td>
+                <br />
+            </td>
+         </tr>
+           <tr>
+            <td>
+               Model
+                </td>
+            <td>
+              @Model.Model
+                </td>
+         </tr>
+         <tr>
+            <td>
+                <br />
+            </td>
+         </tr>
+    </table>  
+</form>
